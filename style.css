@@ -21,7 +21,10 @@ body {
 /* Style the top navigation bar */
 .navbar {
   display: flex;
+    flex-direction: row;
   background-color: #333;
+    list-style-type: none;
+    padding: 13px;
 }
 
 /* Style the navigation bar links */
@@ -58,6 +61,18 @@ body {
   flex: 70%;
   background-color: white;
   padding: 20px;
+}
+
+.pdf {
+    font-family: Arial;
+}
+
+.download_button {
+    padding: 10px 10px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    position: relative;
 }
 
 /* Fake image, just for this example */
