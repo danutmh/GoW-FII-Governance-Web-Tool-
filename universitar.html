@@ -37,9 +37,9 @@
    <a href="gow.html">Prima pagina</a>
     <div class="dropdown">
     <button class="dropbtn" href="general.html">General
-        <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
+    <a href="general.html">General</a>
     <a href="general/HG%20692-2018%20.pdf#page=3">Anexa 1</a>
     <a href="general/HG%20692-2018%20.pdf#page=46">Anexa 2</a>
     <a href="general/HG%20692-2018%20.pdf#page=263">Anexa 3</a>
@@ -51,7 +51,7 @@
   <a href="local.html">Local</a>
   <a class="active" href="universitar.html">Universitar</a>
   <a href="fii.html">FII</a>
-  <a href="login.html">Login</a>
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
   <input type="text" placeholder="Search..">
 
 </div>
@@ -83,6 +83,36 @@
     -->
   </div>
 </div>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div>
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="user" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script src="Modal%20login.js">
+</script>
 
 <!-- Footer -->
 <!--
