@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>GoW documentation</title>
+        <meta name="description" content="The documentation of our version of GoW.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    <section>
+        <h1>
+            Documentation for the GoW project implemented by Munteanu Cosmin and Mihai Dumitru
+        </h1>    
+    </section>
+    <section>
+        <h1>
+            Technology stack
+        </h1>
+        <p>
+            Our project is composed of front-end and back-end. 
+        </p>
+        <p>
+        The front-end is realised using mainly html and css, with some javascript that implements some functionalities to our webpage (such as the login module).
+        </p>
+        <p>
+        The back-end is implemented using php. Our database (that will store the accounts of our users) is going to use the mysqli extension. The administrator is allowed to make CRUD operations on the database, (alter accounts, add/remove documents, add messages in the Atom feed) through a graphic interface. Teachers will be allowed to add comments on each document or message. Students will be allowed to read those documents and messages. Unregistered users won't have acces to the Atom feed and faculty-related documents. The Atom feed (uses XML) contains content available only to members of the faculty.
+        </p>
+        
+        <h2>
+            Work split
+            <h3>
+                Munteanu Cosmin
+            </h3>
+            <li>
+                implement the database functionality (storing accounts, adding documents etc.)
+            </li>
+            <li>
+                integrate the current front-end into the back-end (adding functionality to existing content)
+            </li>
+            
+            <h3>
+                Mihai Dumitru
+            </h3>
+            <li>
+                finishing the user panel (html and css) and cleaning up the css
+            </li>
+            <li>
+                implement the Atom feed
+            </li>
+        </h2>   
+    </section>
+    </body>
+</html>
+    
