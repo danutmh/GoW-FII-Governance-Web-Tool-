@@ -14,3 +14,10 @@ pwdResetSelector TEXT NOT NULL,
 pwdResetToken LONGTEXT NOT NULL,
 pwdResetExpires TEXT NOT NULL
 );
+
+
+
+CREATE TABLE approvedUsers (
+approvedUsersId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+approvedUsername TINYTEXT NOT NULL
+);
