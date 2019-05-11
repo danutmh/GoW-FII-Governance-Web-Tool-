@@ -15,11 +15,42 @@
            <?php
             if(isset($_SESSION['userId'])){
                 echo '<p class="login-status">You are logged in!</p>';
+                if($_SESSION['userId']==1){
+                    echo '<p class="admin">Logged in as admin!</p>';
+                    echo '<form action="upload_file_universitar.php" method="post" enctype="multipart/form-data">
+                          <input type="file" name="file" size="50" />
+                          <br />
+                          <input type="submit" value="Upload" />
+                          </form>';
+                }
             }
            else {
                echo '<p class="login-status">You are logged out!</p>';
            }
            ?>
+           <div class="table-responsive">
+               <table class="table table-striped table-bordered">
+                   <thead>
+                   <tr>
+                       <th>Filename</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+
+                   <?php
+                   $files = scandir('./uploads/universitar/');
+                   rsort($files);
+                   foreach($files as $file)
+                   {
+                       $ext = pathinfo($file, PATHINFO_EXTENSION);
+                       if($ext == 'pdf' || $ext == 'word'){
+                           echo'<tr><td><a href="/gow2/uploads/universitar/'.$file.'" target="_blank">'.$file.'</a></td></tr>';
+                       }
+                   }
+                   ?>
+                   </tbody>
+               </table>
+           </div>
         </section>
     </div>
 </main>
