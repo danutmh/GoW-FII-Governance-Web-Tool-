@@ -1,2 +1,6 @@
 # GoW-FII-Governance-Web-Tool-
-Proiect TW
+Proiect realizat de catre:
+
+Munteanu Cosmin
+
+Mihai Dumitru
