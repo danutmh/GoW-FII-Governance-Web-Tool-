@@ -29,15 +29,13 @@
                         }
                         else {
                             echo '<form action="includes/login.inc.php" method="post">
-                            <input type="text" name="mailuid" placeholder="Username/E-mail">
-                            <input type="password" name="pwd" placeholder="Password">
+                            <input type="text" name="mailuid" placeholder="Username/E-mail" size="25">
+                            <input type="password" name="pwd" placeholder="Password" size="25">
                             <button type="submit" name="login-submit">Login</button>
                             </form>
                             <a href="signup.php">Signup</a>';
                         }
                     ?>
-	               
-                    
                 </div>
             </nav>
         </header>

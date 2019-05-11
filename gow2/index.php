@@ -1,4 +1,5 @@
 <?php include("includes/a_config.php");?>
+<?php error_reporting(E_ALL ^ E_NOTICE);?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,32 @@
                echo '<p class="login-status">You are logged out!</p>';
            }
            ?>
+           <?php
+           $query = $_GET['query'];
+           $query = $query.".pdf";
+           search_file('.',$query);
+
+           function search_file($dir,$file_to_search){
+               $files = scandir($dir);
+               foreach($files as $key => $value){
+                   $path = realpath($dir.DIRECTORY_SEPARATOR.$value);
+                   if(!is_dir($path)) {
+                       if($file_to_search == $value){
+                           echo'<tr><td><a href="'.$path.'" target="_blank">'.$file_to_search.'</a></td></tr>';
+                           break;
+                       }
+                   } else if($value != "." && $value != "..") {
+                       search_file($path, $file_to_search);
+                   }
+               }
+           }
+           ?>
+           <body>
+           <form action="" method="GET">
+               <input type="text" name="query" placeholder="Enter the name of the file" size="30"/>
+               <input type="submit" name="submit" value="Search" />
+           </form>
+           </body>
            <div class="table-responsive">
                <table class="table table-striped table-bordered">
                    <thead>
@@ -47,6 +74,7 @@
                            echo'<tr><td><a href="/gow2/uploads/'.$file.'" target="_blank">'.$file.'</a></td></tr>';
                        }
                    }
+
                    ?>
                    </tbody>
                </table>
