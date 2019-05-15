@@ -33,7 +33,7 @@
                             <input type="password" name="pwd" placeholder="Password" size="25">
                             <button type="submit" name="login-submit">Login</button>
                             </form>
-                            <a href="signup.php">Signup</a>';
+                            <a class="content_box" href="signup.php">Signup</a>';
                         }
                     ?>
                 </div>
