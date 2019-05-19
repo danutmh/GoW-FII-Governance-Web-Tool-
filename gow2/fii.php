@@ -1,4 +1,6 @@
 <?php include("includes/a_config.php");?>
+<?php include("includes/dbh.inc.php");?>
+<?php include("comments.inc.php");?>
 <?php error_reporting(E_ALL ^ E_NOTICE);?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +13,7 @@
         
 <main>
     <div class="container" id="main-content">
-	   <h2>GoW</h2>
+	   <h2>Faculty related documents and news</h2>
        <section class="section-default"> 
            <?php
             if(isset($_SESSION['userId'])){
@@ -23,6 +25,14 @@
                           <br />
                           <input type="submit" value="Upload" />
                           </form>';
+
+                    echo "<form method='post' action='".setComments($conn)."'>
+                          <input type='hidden' name='uid' value='".$_SESSION['userId']."'>
+                          <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                          <textarea name='message'></textarea><br>
+                          <button name='commentSubmit' type='submit'>Comment</button>
+                          </form>";
+                    getComments($conn);
                 }
             }
            else {

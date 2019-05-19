@@ -1,5 +1,8 @@
 <?php include("includes/a_config.php");?>
+<?php include("includes/dbh.inc.php");?>
+<?php include("comments.inc.php");?>
 <?php error_reporting(E_ALL ^ E_NOTICE);?>
+<?php date_default_timezone_set('Europe/Bucharest');?>
 <!DOCTYPE html>
 <html>
 <head>

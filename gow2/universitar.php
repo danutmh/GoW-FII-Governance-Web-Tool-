@@ -11,7 +11,7 @@
         
 <main>
     <div class="container" id="main-content">
-	   <h2>GoW</h2>
+	   <h2>University related documents</h2>
        <section class="section-default"> 
            <?php
             if(isset($_SESSION['userId'])){
