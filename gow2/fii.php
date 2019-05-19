@@ -37,6 +37,7 @@
             }
            else {
                echo '<p class="login-status">You are logged out!</p>';
+               getComments($conn);
            }
            ?>
            <?php
