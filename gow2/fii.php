@@ -14,7 +14,13 @@
 <main>
     <div class="container" id="main-content">
 	   <h2>Faculty related documents and news</h2>
-       <section class="section-default"> 
+        <body>
+        <form action="" method="GET">
+            <input type="search" name="query" placeholder="Enter the name of the file or the comment you are trying to find"/>
+            <input type="submit" name="submit" value="Search" />
+        </form>
+        </body>
+       <section class="section-default">
            <?php
             if(isset($_SESSION['userId'])){
                 echo '<p class="login-status">You are logged in!</p>';
@@ -41,6 +47,26 @@
            }
            ?>
            <?php
+            if(isset($_GET['query'])){
+                $query = $_GET['query'];
+                $sql_search = "SELECT * FROM comments WHERE message LIKE '%{$query}%'";
+                $result = $conn->query($sql_search);
+                if($result->num_rows > 0){
+                    while($row = $result->fetch_array()){
+                        echo "<div class='comment-box'><p>";
+                        echo $row['uid']."<br>";
+                        echo $row['date']."<br>";
+                        echo nl2br($row['message']);
+                        echo "</p></div>";
+                    }
+                } else{
+                    echo "No comments matching your search parameters were found!";
+                    echo "<br>";
+                }
+                $conn->close();
+            }
+
+
            $query = $_GET['query'];
            $query = $query.".pdf";
            search_file('.',$query);
@@ -60,12 +86,7 @@
                }
            }
            ?>
-           <body>
-           <form action="" method="GET">
-               <input type="text" name="query" />
-               <input type="submit" name="submit" value="Search" />
-           </form>
-           </body>
+
            <div class="table-responsive">
                <table class="table table-striped table-bordered">
                    <thead>
