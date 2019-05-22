@@ -40,6 +40,7 @@
                    $path = realpath($dir.DIRECTORY_SEPARATOR.$value);
                    if(!is_dir($path)) {
                        if($file_to_search == $value){
+                           $path = substr($path,15);
                            echo'<tr><td><a href="'.$path.'" target="_blank">'.$file_to_search.'</a></td></tr>';
                            break;
                        }
